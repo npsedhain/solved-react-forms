@@ -4,7 +4,7 @@ const dummy = {
   age: 23,
   phoneNumber: 988923434,
   password: '@##!12132DdsFDSFSads@#@1$%$',
-  homepage: 'http://npsedhain.com'
+  homepage: 'https://google.com'
 };
 
 describe('Sign Up', () => {
@@ -145,7 +145,7 @@ describe('Sign Up', () => {
         age: '23',
         phoneNumber: '988923434',
         password: '@##!12132DdsFDSFSads@#@1$%$',
-        homepage: 'http://npsedhain.com'
+        homepage: 'https://google.com'
       }
     ];
 
@@ -156,9 +156,9 @@ describe('Sign Up', () => {
       });
 
       const tbody = cy.get('tbody');
-      tbody.get('a[href="http://npsedhain.com"]').then(($location) => {
+      tbody.get('a[href="https://google.com"]').then(($location) => {
         const href = $location.prop('href');
-        cy.request(href).its('body').should('contain', dummy.name);
+        cy.request(href).its('body').should('contain', 'Google');
       });
     });
   });
